@@ -7,12 +7,12 @@ export default function Footer() {
           SB
         </div>
         <span className="font-bold tracking-wider text-white text-xs uppercase">
-          Squad<span className="text-brand-orange">Builder</span>
+          NBA All Star Lineup<span className="text-brand-orange">Builder</span>
         </span>
       </div>
 
       {/* Copyright */}
-      <p className="text-xs text-gray-600">© 2024 SquadBuilder. All rights reserved.</p>
+      <p className="text-xs text-gray-600">© 2026 All rights reserved.</p>
 
       {/* Social icons */}
       <div className="flex items-center gap-4 text-gray-500">

@@ -1,4 +1,4 @@
-// File: C:\Users\mtahs\OneDrive\Desktop\Coding\NBATeamSelector-master\app\page.js
+// File: C:\Users\mtahs\OneDrive\Desktop\Coding\NBA All Star Lineup\app\page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
