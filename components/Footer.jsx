@@ -4,7 +4,7 @@ export default function Footer() {
       {/* Logo */}
       <div className="flex items-center gap-2">
         <div className="w-6 h-6 bg-brand-orange rounded flex items-center justify-center font-bold text-white text-xs">
-          TESTING
+          
         </div>
         <span className="font-bold tracking-wider text-white text-xs uppercase">
           NBA All Star Lineup <span className="text-brand-orange">Builder</span>

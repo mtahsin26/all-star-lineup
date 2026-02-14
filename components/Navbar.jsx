@@ -4,7 +4,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 bg-brand-orange rounded flex items-center justify-center font-bold text-white text-sm">
-          SB
+          
         </div>
         <span className="font-bold tracking-wider text-white text-sm uppercase">
           NBA ALL STAR LINEUP <span className="text-brand-orange">Builder</span>
