@@ -13,9 +13,9 @@ export default function Navbar() {
 
       {/* Nav links */}
       <div className="flex items-center gap-6 text-xs font-semibold tracking-widest text-gray-400 uppercase">
-        <span className="hover:text-white cursor-pointer transition-colors">Create</span>
+        {/* <span className="hover:text-white cursor-pointer transition-colors">Create</span>
         <span className="hover:text-white cursor-pointer transition-colors">My Rosters</span>
-        <span className="hover:text-white cursor-pointer transition-colors">Leaderboard</span>
+        <span className="hover:text-white cursor-pointer transition-colors">Leaderboard</span> */}
       </div>
     </nav>
   );
