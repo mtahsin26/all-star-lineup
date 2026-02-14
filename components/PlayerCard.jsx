@@ -37,20 +37,20 @@ export default function PlayerCard({ player, onAdd, inLineup }) {
         }`}
     >
       {/* Avatar: real photo if available, initials fallback */}
-      <div className="relative w-[120px] h-[120px] flex-shrink-0">
+      <div className="relative w-[80px] h-[80px] flex-shrink-0">
         {player.image && !imgError ? (
           <Image
             src={player.image}
             alt={player.name}
-            width={120}
-            height={120}
-            className="rounded-full object-cover w-[120px] h-[120px]"
+            width={80}
+            height={80}
+            className="rounded-full object-cover w-[80px] h-[80px]"
             onError={() => setImgError(true)}
             unoptimized
           />
         ) : (
           <div
-            className="w-[120px] h-[120px] rounded-full flex items-center justify-center text-2xl font-bold text-white"
+            className="w-[80px] h-[80px] rounded-full flex items-center justify-center text-xl font-bold text-white"
             style={{ backgroundColor: avatarColor(player.name) }}
           >
             {initials(player.name)}
@@ -66,7 +66,7 @@ export default function PlayerCard({ player, onAdd, inLineup }) {
 
       {/* Name, team, status */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-white truncate">{player.name}</p>
+        <p className="text-sm font-semibold text-white">{player.name}</p>
         <p className="text-xs text-gray-400 truncate">
           {player.team}
           {isInjured && (

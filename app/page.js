@@ -87,7 +87,7 @@ export default function Home() {
         </div>
 
         {/* Three-column layout */}
-        <div className="max-w-screen-xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-[300px_1fr_280px] gap-5">
+        <div className="max-w-screen-xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-[380px_1fr_260px] gap-5">
           <FindPlayers lineup={lineup} onAdd={addPlayer} />
           <YourLineup lineup={lineup} teamName={teamName} setTeamName={setTeamName} onRemove={removePlayer} />
           <TeamInfo

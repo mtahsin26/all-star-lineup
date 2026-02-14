@@ -27,8 +27,8 @@ export default function LineupSlot({ index, player, onRemove }) {
   if (!player) {
     return (
       <div className="flex items-center gap-4 p-3 rounded-lg border border-dashed border-brand-border bg-brand-panel/40">
-        <div className="w-10 h-10 rounded-full border-2 border-dashed border-gray-600 flex items-center justify-center flex-shrink-0">
-          <span className="text-gray-600 text-lg font-light">+</span>
+        <div className="w-[60px] h-[60px] rounded-full border-2 border-dashed border-gray-600 flex items-center justify-center flex-shrink-0">
+          <span className="text-gray-600 text-xl font-light">+</span>
         </div>
         <div>
           <p className="text-sm font-semibold text-gray-500">Empty Slot</p>
@@ -46,20 +46,20 @@ export default function LineupSlot({ index, player, onRemove }) {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Avatar */}
-      <div className="relative w-10 h-10 flex-shrink-0">
+      <div className="relative w-[60px] h-[60px] flex-shrink-0">
         {player.image && !imgError ? (
           <Image
             src={player.image}
             alt={player.name}
-            width={40}
-            height={40}
-            className="rounded-full object-cover w-10 h-10"
+            width={60}
+            height={60}
+            className="rounded-full object-cover w-[60px] h-[60px]"
             onError={() => setImgError(true)}
             unoptimized
           />
         ) : (
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white"
+            className="w-[60px] h-[60px] rounded-full flex items-center justify-center text-lg font-bold text-white"
             style={{ backgroundColor: avatarColor(player.name) }}
           >
             {initials(player.name)}
