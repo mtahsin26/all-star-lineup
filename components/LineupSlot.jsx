@@ -69,19 +69,19 @@ export default function LineupSlot({ index, player, onRemove }) {
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-white truncate">{player.name}</p>
+        <div className="flex items-center gap-2">
+          <p className="text-sm font-semibold text-white truncate">{player.name}</p>
+          <span className="text-sm text-gray-400 border border-brand-border rounded px-2 py-0.5 flex-shrink-0 leading-none">
+            {player.position}
+          </span>
+        </div>
         <p className="text-xs text-gray-400 truncate">{player.team}</p>
       </div>
-
-      {/* Position pill */}
-      <span className="text-xs text-gray-400 border border-brand-border rounded px-1.5 py-0.5 flex-shrink-0">
-        {player.position}
-      </span>
 
       {/* Remove button — visible on hover */}
       <button
         onClick={() => onRemove(player.name)}
-        className={`absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-red-600 hover:bg-red-500 text-white text-xs font-bold flex items-center justify-center transition-opacity
+        className={`absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-bold flex items-center justify-center transition-opacity
           ${hovered ? 'opacity-100' : 'opacity-0'}`}
         title="Remove player"
       >
