@@ -37,20 +37,20 @@ export default function PlayerCard({ player, onAdd, inLineup }) {
         }`}
     >
       {/* Avatar: real photo if available, initials fallback */}
-      <div className="relative w-10 h-10 flex-shrink-0">
+      <div className="relative w-[120px] h-[120px] flex-shrink-0">
         {player.image && !imgError ? (
           <Image
             src={player.image}
             alt={player.name}
-            width={40}
-            height={40}
-            className="rounded-full object-cover w-10 h-10"
+            width={120}
+            height={120}
+            className="rounded-full object-cover w-[120px] h-[120px]"
             onError={() => setImgError(true)}
             unoptimized
           />
         ) : (
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold text-white"
+            className="w-[120px] h-[120px] rounded-full flex items-center justify-center text-2xl font-bold text-white"
             style={{ backgroundColor: avatarColor(player.name) }}
           >
             {initials(player.name)}
@@ -58,7 +58,7 @@ export default function PlayerCard({ player, onAdd, inLineup }) {
         )}
         {/* Conference dot */}
         <span
-          className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-brand-panel
+          className={`absolute bottom-1 right-1 w-4 h-4 rounded-full border-2 border-brand-panel
             ${player.conference === 'Eastern' ? 'bg-blue-500' : 'bg-red-500'}`}
           title={`${player.conference} Conference`}
         />
