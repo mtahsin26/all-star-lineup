@@ -6,12 +6,17 @@ import YourLineup from '@/components/YourLineup';
 import TeamInfo from '@/components/TeamInfo';
 
 const STORAGE_KEY = 'nba_squad';
+const CURRENT_YEAR = 2026;
+const LEGACY_YEAR = 2003;
 
 export default function Home() {
   const [lineup, setLineup] = useState([]);
   const [coachName, setCoachName] = useState('');
   const [teamName, setTeamName] = useState('');
   const [hydrated, setHydrated] = useState(false);
+  const [legacyMode, setLegacyMode] = useState(false);
+
+  const selectedYear = legacyMode ? LEGACY_YEAR : CURRENT_YEAR;
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -26,6 +31,12 @@ export default function Home() {
     } catch (_) {}
     setHydrated(true);
   }, []);
+
+  // Clear lineup when switching modes
+  function toggleLegacyMode() {
+    setLegacyMode(prev => !prev);
+    setLineup([]);
+  }
 
   function addPlayer(player) {
     if (lineup.length >= 5) return alert('Your lineup is full (5/5)');
@@ -84,11 +95,41 @@ export default function Home() {
             <span className="text-brand-orange">All-Star</span>{' '}
             Team
           </h1>
+
+          {/* Legacy Mode Toggle */}
+          <div className="mt-5 flex items-center justify-center gap-3">
+            <span className={`text-xs font-bold tracking-widest uppercase transition-colors ${!legacyMode ? 'text-brand-orange' : 'text-gray-500'}`}>
+              {CURRENT_YEAR}
+            </span>
+            <button
+              onClick={toggleLegacyMode}
+              className={`relative w-14 h-7 rounded-full transition-colors duration-300 focus:outline-none border-2 ${
+                legacyMode
+                  ? 'bg-amber-600 border-amber-500'
+                  : 'bg-brand-card border-brand-border'
+              }`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition-transform duration-300 ${
+                  legacyMode ? 'translate-x-7' : 'translate-x-0'
+                }`}
+              />
+            </button>
+            <span className={`text-xs font-bold tracking-widest uppercase transition-colors ${legacyMode ? 'text-amber-500' : 'text-gray-500'}`}>
+              Legacy Mode
+            </span>
+          </div>
+
+          {legacyMode && (
+            <p className="mt-2 text-xs text-amber-500/80 tracking-wide">
+              2003 NBA All-Star Game &middot; Atlanta (Philips Arena) &middot; West 155, East 145 (2OT)
+            </p>
+          )}
         </div>
 
         {/* Three-column layout */}
         <div className="max-w-screen-xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-[380px_1fr_260px] gap-5">
-          <FindPlayers lineup={lineup} onAdd={addPlayer} />
+          <FindPlayers lineup={lineup} onAdd={addPlayer} selectedYear={selectedYear} />
           <YourLineup lineup={lineup} teamName={teamName} setTeamName={setTeamName} onRemove={removePlayer} />
           <TeamInfo
             coachName={coachName}

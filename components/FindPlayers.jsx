@@ -1,10 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { getPlayers } from '@/lib/getPlayers';
 import PlayerCard from './PlayerCard';
-
-const { players, year, meta } = getPlayers();
 
 const POS_FILTERS = ['ALL', 'G', 'F', 'C'];
 const CONF_FILTERS = [
@@ -13,10 +11,12 @@ const CONF_FILTERS = [
   { label: 'West',    value: 'Western' },
 ];
 
-export default function FindPlayers({ lineup, onAdd }) {
+export default function FindPlayers({ lineup, onAdd, selectedYear }) {
   const [search, setSearch] = useState('');
   const [posFilter, setPosFilter] = useState('ALL');
   const [confFilter, setConfFilter] = useState('ALL');
+
+  const { players, year, meta } = useMemo(() => getPlayers(selectedYear), [selectedYear]);
 
   const lineupNames = new Set(lineup.map(p => p.name));
 
