@@ -2,107 +2,195 @@
   "year": 2003,
   "event": "NBA All-Star Game",
   "location": "Atlanta (Philips Arena)",
-  "format": "Eastern Conference vs. Western Conference",
+  "format": "East vs. West",
   "total_players": 24,
-  "last_updated": "2003-02-09",
-  "mvp": "Kevin Garnett",
-  "final_score": "West 155, East 145 (2OT)",
-  "coaches": {
-    "east": "Isiah Thomas (Indiana Pacers)",
-    "west": "Rick Adelman (Sacramento Kings)"
-  },
+  "last_updated": "2026-03-02",
   "all_stars": [
+    {
+      "firstName": "Allen",
+      "lastName": "Iverson",
+      "team": "Philadelphia 76ers",
+      "position": "G",
+      "number": 3,
+      "conference": "Eastern",
+      "selection_type": "Starter",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/947.png"
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Jordan",
+      "team": "Washington Wizards",
+      "position": "G",
+      "number": 23,
+      "conference": "Eastern",
+      "selection_type": "Starter",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/893.png"
+    },
+    {
+      "firstName": "Tracy",
+      "lastName": "McGrady",
+      "team": "Orlando Magic",
+      "position": "G",
+      "number": 1,
+      "conference": "Eastern",
+      "selection_type": "Starter",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1503.png"
+    },
+    {
+      "firstName": "Jermaine",
+      "lastName": "O'Neal",
+      "team": "Indiana Pacers",
+      "position": "F",
+      "number": 7,
+      "conference": "Eastern",
+      "selection_type": "Starter",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/979.png"
+    },
+    {
+      "firstName": "Ben",
+      "lastName": "Wallace",
+      "team": "Detroit Pistons",
+      "position": "C",
+      "number": 3,
+      "conference": "Eastern",
+      "selection_type": "Starter",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1112.png"
+    },
+    {
+      "firstName": "Vince",
+      "lastName": "Carter",
+      "team": "Toronto Raptors",
+      "position": "G",
+      "number": 15,
+      "conference": "Eastern",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1713.png"
+    },
+    {
+      "firstName": "Jason",
+      "lastName": "Kidd",
+      "team": "New Jersey Nets",
+      "position": "G",
+      "number": 5,
+      "conference": "Eastern",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/467.png"
+    },
+    {
+      "firstName": "Paul",
+      "lastName": "Pierce",
+      "team": "Boston Celtics",
+      "position": "F",
+      "number": 34,
+      "conference": "Eastern",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1718.png"
+    },
+    {
+      "firstName": "Antoine",
+      "lastName": "Walker",
+      "team": "Boston Celtics",
+      "position": "F",
+      "number": 8,
+      "conference": "Eastern",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/952.png"
+    },
+    {
+      "firstName": "Brad",
+      "lastName": "Miller",
+      "team": "Sacramento Kings",
+      "position": "C",
+      "number": 52,
+      "conference": "Eastern",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1802.png"
+    },
+    {
+      "firstName": "Jamal",
+      "lastName": "Mashburn",
+      "team": "New Orleans Hornets",
+      "position": "F",
+      "number": 32,
+      "conference": "Eastern",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/469.png"
+    },
+    {
+      "firstName": "Zydrunas",
+      "lastName": "Ilgauskas",
+      "team": "Cleveland Cavaliers",
+      "position": "C",
+      "number": 11,
+      "conference": "Eastern",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/980.png"
+    },
     {
       "firstName": "Kobe",
       "lastName": "Bryant",
-      "height": "6'7\"",
-      "weight": 215,
       "team": "Los Angeles Lakers",
       "position": "G",
       "number": 8,
       "conference": "Western",
       "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/201939.png"
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/977.png"
     },
     {
       "firstName": "Steve",
       "lastName": "Francis",
-      "height": "6'3\"",
-      "weight": 195,
       "team": "Houston Rockets",
       "position": "G",
-      "number": 1,
+      "number": 3,
       "conference": "Western",
       "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/200745.png"
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1883.png"
     },
     {
       "firstName": "Kevin",
       "lastName": "Garnett",
-      "height": "6'11\"",
-      "weight": 220,
       "team": "Minnesota Timberwolves",
       "position": "F",
       "number": 21,
       "conference": "Western",
       "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/201950.png"
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/708.png"
     },
     {
       "firstName": "Tim",
       "lastName": "Duncan",
-      "height": "7'0\"",
-      "weight": 260,
       "team": "San Antonio Spurs",
       "position": "F",
       "number": 21,
       "conference": "Western",
       "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/2391.png"
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1495.png"
+    },
+    {
+      "firstName": "Yao",
+      "lastName": "Ming",
+      "team": "Houston Rockets",
+      "position": "C",
+      "number": 11,
+      "conference": "Western",
+      "selection_type": "Starter",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/2397.png"
     },
     {
       "firstName": "Shaquille",
       "lastName": "O'Neal",
-      "height": "7'1\"",
-      "weight": 335,
       "team": "Los Angeles Lakers",
       "position": "C",
       "number": 34,
       "conference": "Western",
-      "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/141.png"
-    },
-    {
-      "firstName": "Karl",
-      "lastName": "Malone",
-      "height": "6'9\"",
-      "weight": 255,
-      "team": "Utah Jazz",
-      "position": "F",
-      "number": 32,
-      "conference": "Western",
       "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/171.png"
-    },
-    {
-      "firstName": "Steve",
-      "lastName": "Nash",
-      "height": "6'3\"",
-      "weight": 195,
-      "team": "Dallas Mavericks",
-      "position": "G",
-      "number": 13,
-      "conference": "Western",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/406.png"
     },
     {
       "firstName": "Dirk",
       "lastName": "Nowitzki",
-      "height": "7'0\"",
-      "weight": 245,
       "team": "Dallas Mavericks",
-      "position": "F/C",
+      "position": "F",
       "number": 41,
       "conference": "Western",
       "selection_type": "Reserve",
@@ -111,196 +199,60 @@
     {
       "firstName": "Gary",
       "lastName": "Payton",
-      "height": "6'4\"",
-      "weight": 180,
       "team": "Seattle SuperSonics",
       "position": "G",
       "number": 20,
       "conference": "Western",
       "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/145.png"
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/56.png"
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Nash",
+      "team": "Dallas Mavericks",
+      "position": "G",
+      "number": 13,
+      "conference": "Western",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/959.png"
+    },
+    {
+      "firstName": "Shawn",
+      "lastName": "Marion",
+      "team": "Phoenix Suns",
+      "position": "F",
+      "number": 31,
+      "conference": "Western",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1890.png"
+    },
+    {
+      "firstName": "Stephon",
+      "lastName": "Marbury",
+      "team": "Phoenix Suns",
+      "position": "G",
+      "number": 3,
+      "conference": "Western",
+      "selection_type": "Reserve",
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/950.png"
     },
     {
       "firstName": "Peja",
-      "lastName": "Stojaković",
-      "height": "6'9\"",
-      "weight": 229,
+      "lastName": "Stojakovic",
       "team": "Sacramento Kings",
       "position": "F",
       "number": 16,
       "conference": "Western",
       "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/2516.png"
-    },
-    {
-      "firstName": "Wally",
-      "lastName": "Szczerbiak",
-      "height": "6'7\"",
-      "weight": 244,
-      "team": "Minnesota Timberwolves",
-      "position": "G/F",
-      "number": 3,
-      "conference": "Western",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Chris",
-      "lastName": "Webber",
-      "height": "6'10\"",
-      "weight": 245,
-      "team": "Sacramento Kings",
-      "position": "F",
-      "number": 5,
-      "conference": "Western",
-      "selection_type": "Reserve",
-      "status": "Injured - Replaced by Peja Stojaković",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/2515.png"
-    },
-    {
-      "firstName": "Vince",
-      "lastName": "Carter",
-      "height": "6'6\"",
-      "weight": 225,
-      "team": "Toronto Raptors",
-      "position": "F",
-      "number": 15,
-      "conference": "Eastern",
-      "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Antoine",
-      "lastName": "Walker",
-      "height": "6'9\"",
-      "weight": 245,
-      "team": "Boston Celtics",
-      "position": "F",
-      "number": 8,
-      "conference": "Eastern",
-      "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Dikembe",
-      "lastName": "Mutombo",
-      "height": "7'2\"",
-      "weight": 265,
-      "team": "Philadelphia 76ers",
-      "position": "C",
-      "number": 55,
-      "conference": "Eastern",
-      "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/2439.png"
-    },
-    {
-      "firstName": "Allen",
-      "lastName": "Iverson",
-      "height": "6'0\"",
-      "weight": 165,
-      "team": "Philadelphia 76ers",
-      "position": "G",
-      "number": 3,
-      "conference": "Eastern",
-      "selection_type": "Starter",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/2571.png"
-    },
-    {
-      "firstName": "Michael",
-      "lastName": "Jordan",
-      "height": "6'6\"",
-      "weight": 218,
-      "team": "Washington Wizards",
-      "position": "G",
-      "number": 23,
-      "conference": "Eastern",
-      "selection_type": "Starter",
-      "note": "Final All-Star Game Appearance (14th Selection)",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/893.png"
-    },
-    {
-      "firstName": "Shareef",
-      "lastName": "Abdur-Rahim",
-      "height": "6'9\"",
-      "weight": 240,
-      "team": "Atlanta Hawks",
-      "position": "F",
-      "number": 3,
-      "conference": "Eastern",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Ray",
-      "lastName": "Allen",
-      "height": "6'5\"",
-      "weight": 205,
-      "team": "Milwaukee Bucks",
-      "position": "G",
-      "number": 34,
-      "conference": "Eastern",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Jason",
-      "lastName": "Kidd",
-      "height": "6'4\"",
-      "weight": 212,
-      "team": "New Jersey Nets",
-      "position": "G",
-      "number": 5,
-      "conference": "Eastern",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Tracy",
-      "lastName": "McGrady",
-      "height": "6'8\"",
-      "weight": 210,
-      "team": "Orlando Magic",
-      "position": "G/F",
-      "number": 1,
-      "conference": "Eastern",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Alonzo",
-      "lastName": "Mourning",
-      "height": "6'10\"",
-      "weight": 261,
-      "team": "Miami Heat",
-      "position": "C",
-      "number": 33,
-      "conference": "Eastern",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Jermaine",
-      "lastName": "O'Neal",
-      "height": "6'11\"",
-      "weight": 242,
-      "team": "Indiana Pacers",
-      "position": "C/F",
-      "number": 7,
-      "conference": "Eastern",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
-    },
-    {
-      "firstName": "Paul",
-      "lastName": "Pierce",
-      "height": "6'6\"",
-      "weight": 230,
-      "team": "Boston Celtics",
-      "position": "G/F",
-      "number": 34,
-      "conference": "Eastern",
-      "selection_type": "Reserve",
-      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/1717.png"
+      "image": "https://cdn.nba.com/headshots/nba/latest/260x190/978.png"
     }
-  ]
+  ],
+  "conference_breakdown": {
+    "eastern_conference": 12,
+    "western_conference": 12
+  },
+  "selection_breakdown": {
+    "starters": 10,
+    "reserves": 14
+  }
 }
