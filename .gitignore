@@ -220,3 +220,10 @@ node_modules
 #############
 .next/
 out/
+
+#############
+## Images
+#############
+public/images/
+public/players/
+nba_allstar_2003_headshots/
