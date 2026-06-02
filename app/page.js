@@ -106,13 +106,13 @@ export default function Home() {
           <p className="text-sm text-gray-400 tracking-widest uppercase mb-2">
             Select 5 players to complete your ultimate lineup
           </p>
-          <h1 className="relative text-4xl md:text-5xl font-extrabold tracking-tight uppercase">
+          <h1 className="relative text-4xl md:text-5xl font-extrabold tracking-tight uppercase overflow-hidden">
             <span className={`transition-opacity duration-700 ease-in-out ${mode === 'knicks' ? 'opacity-0' : 'opacity-100'}`}>
               Build Your{' '}
               <span className="text-brand-orange">All-Star</span>{' '}
               Team
             </span>
-            <span className={`absolute inset-0 whitespace-nowrap transition-opacity duration-700 ease-in-out ${mode === 'knicks' ? 'opacity-100' : 'opacity-0'}`}>
+            <span className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${mode === 'knicks' ? 'opacity-100' : 'opacity-0'}`}>
               Build Your{' '}
               <span className="text-brand-orange">Knicks</span>{' '}
               Starting 5

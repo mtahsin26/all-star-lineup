@@ -5,7 +5,7 @@ export default function Navbar({ mode }) {
 
   return (
     <nav
-      className="border-b border-brand-border px-6 py-3 flex items-center justify-between transition-colors duration-700 ease-in-out"
+      className="border-b border-brand-border px-4 py-3 flex items-center justify-between gap-4 min-w-0 transition-colors duration-700 ease-in-out"
       style={{ backgroundColor: isKnicks ? '#305CDE' : '#0D1117' }}
     >
       {/* Logo */}
@@ -31,7 +31,7 @@ export default function Navbar({ mode }) {
             />
           </div>
         </div>
-        <div className="relative font-bold tracking-wider text-white text-sm uppercase">
+        <div className="relative font-bold tracking-wider text-white text-sm uppercase overflow-hidden min-w-0">
           <span className={`transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}>
             NBA ALL STAR LINEUP <span className="text-brand-orange">Builder</span>
           </span>

@@ -5,7 +5,7 @@ export default function Footer({ mode }) {
 
   return (
     <footer
-      className="border-t border-brand-border px-6 py-4 flex items-center justify-between transition-colors duration-700 ease-in-out"
+      className="border-t border-brand-border px-4 py-4 flex items-center justify-between gap-4 min-w-0 transition-colors duration-700 ease-in-out"
       style={{ backgroundColor: isKnicks ? '#305CDE' : '#0D1117' }}
     >
       {/* Logo */}
@@ -32,7 +32,7 @@ export default function Footer({ mode }) {
           </div>
         </div>
 
-        <div className="relative font-bold tracking-wider text-white text-xs uppercase">
+        <div className="relative font-bold tracking-wider text-white text-xs uppercase overflow-hidden min-w-0">
           <span className={`transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}>
             NBA All Star Lineup <span className="text-brand-orange">Builder</span>
           </span>

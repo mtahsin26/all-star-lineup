@@ -53,7 +53,7 @@ export default function FindPlayers({ lineup, onAdd, selectedYear, mode }) {
     <div
       className="border border-brand-border rounded-xl flex flex-col transition-colors duration-700 ease-in-out"
       style={{
-        maxHeight: '660px',
+        maxHeight: 'min(660px, 70vh)',
         backgroundColor: isKnicksMode ? 'rgba(24, 30, 40, 0.32)' : '#161B22',
       }}
     >
