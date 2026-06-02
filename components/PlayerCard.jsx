@@ -77,7 +77,9 @@ export default function PlayerCard({ player, onAdd, inLineup }) {
 
       {/* Right side: position pill + jersey number */}
       <div className="flex flex-col items-end gap-1 flex-shrink-0">
-        <span className="text-xs font-bold text-brand-orange">#{player.number}</span>
+        {player.number && (
+          <span className="text-xs font-bold text-brand-orange">#{player.number}</span>
+        )}
         <span className="text-xs text-gray-500 border border-brand-border rounded px-1">
           {player.position}
         </span>

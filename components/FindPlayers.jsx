@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { getPlayers } from '@/lib/getPlayers';
 import PlayerCard from './PlayerCard';
 
@@ -11,10 +11,24 @@ const CONF_FILTERS = [
   { label: 'West',    value: 'Western' },
 ];
 
-export default function FindPlayers({ lineup, onAdd, selectedYear }) {
+const ROLE_FILTERS = [
+  { label: 'ALL',      value: 'ALL'     },
+  { label: 'Starters', value: 'Starter' },
+  { label: 'Bench',    value: 'Reserve' },
+];
+
+export default function FindPlayers({ lineup, onAdd, selectedYear, mode }) {
   const [search, setSearch] = useState('');
   const [posFilter, setPosFilter] = useState('ALL');
   const [confFilter, setConfFilter] = useState('ALL');
+
+  const isKnicksMode = mode === 'knicks';
+
+  useEffect(() => {
+    setSearch('');
+    setPosFilter('ALL');
+    setConfFilter('ALL');
+  }, [selectedYear]);
 
   const { players, year, meta } = useMemo(() => getPlayers(selectedYear), [selectedYear]);
 
@@ -22,7 +36,9 @@ export default function FindPlayers({ lineup, onAdd, selectedYear }) {
 
   const filtered = players.filter(p => {
     const matchPos  = posFilter  === 'ALL' || p.position  === posFilter;
-    const matchConf = confFilter === 'ALL' || p.conference === confFilter;
+    const matchConf = confFilter === 'ALL' || (
+      isKnicksMode ? p.selectionType === confFilter : p.conference === confFilter
+    );
     const matchSearch = p.name.toLowerCase().includes(search.toLowerCase());
     return matchPos && matchConf && matchSearch;
   });
@@ -39,7 +55,9 @@ export default function FindPlayers({ lineup, onAdd, selectedYear }) {
       <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-brand-border flex-shrink-0">
         <div>
           <h2 className="text-xs font-bold tracking-widest uppercase text-gray-300">Find Players</h2>
-          <p className="text-xs text-brand-orange mt-0.5">{year} All-Stars · {meta.location}</p>
+          <p className={`text-xs mt-0.5 ${isKnicksMode ? 'text-blue-400' : 'text-brand-orange'}`}>
+            {isKnicksMode ? `${meta.event} · ${meta.location}` : `${year} All-Stars · ${meta.location}`}
+          </p>
         </div>
         <button
           onClick={reset}
@@ -85,27 +103,44 @@ export default function FindPlayers({ lineup, onAdd, selectedYear }) {
         </div>
       </div>
 
-      {/* Conference filter pills */}
+      {/* Conference / Role filter pills */}
       <div className="px-4 pb-3 flex-shrink-0">
-        <p className="text-xs text-gray-600 uppercase tracking-widest mb-1.5">Conference</p>
+        <p className="text-xs text-gray-600 uppercase tracking-widest mb-1.5">
+          {isKnicksMode ? 'Role' : 'Conference'}
+        </p>
         <div className="flex gap-2">
-          {CONF_FILTERS.map(f => (
-            <button
-              key={f.value}
-              onClick={() => setConfFilter(f.value)}
-              className={`px-3 py-1 rounded text-xs font-bold transition-colors
-                ${confFilter === f.value
-                  ? f.value === 'Eastern'
-                    ? 'bg-blue-600 text-white'
-                    : f.value === 'Western'
-                    ? 'bg-red-600 text-white'
-                    : 'bg-brand-orange text-white'
-                  : 'bg-brand-card border border-brand-border text-gray-400 hover:text-white'
-                }`}
-            >
-              {f.label}
-            </button>
-          ))}
+          {isKnicksMode
+            ? ROLE_FILTERS.map(f => (
+                <button
+                  key={f.value}
+                  onClick={() => setConfFilter(f.value)}
+                  className={`px-3 py-1 rounded text-xs font-bold transition-colors
+                    ${confFilter === f.value
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-brand-card border border-brand-border text-gray-400 hover:text-white'
+                    }`}
+                >
+                  {f.label}
+                </button>
+              ))
+            : CONF_FILTERS.map(f => (
+                <button
+                  key={f.value}
+                  onClick={() => setConfFilter(f.value)}
+                  className={`px-3 py-1 rounded text-xs font-bold transition-colors
+                    ${confFilter === f.value
+                      ? f.value === 'Eastern'
+                        ? 'bg-blue-600 text-white'
+                        : f.value === 'Western'
+                        ? 'bg-red-600 text-white'
+                        : 'bg-brand-orange text-white'
+                      : 'bg-brand-card border border-brand-border text-gray-400 hover:text-white'
+                    }`}
+                >
+                  {f.label}
+                </button>
+              ))
+          }
         </div>
       </div>
 

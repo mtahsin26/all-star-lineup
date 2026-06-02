@@ -1,22 +1,28 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import FindPlayers from '@/components/FindPlayers';
 import YourLineup from '@/components/YourLineup';
 import TeamInfo from '@/components/TeamInfo';
 
 const STORAGE_KEY = 'nba_squad';
-const CURRENT_YEAR = 2026;
-const LEGACY_YEAR = 2003;
+
+const MODES = [
+  { id: 'current', label: '2026 All-Stars',    year: 2026         },
+  { id: 'knicks',  label: "Knicks Finals '26",  year: 'knicks_2026' },
+  { id: 'legacy',  label: '2003 Legacy',        year: 2003         },
+];
 
 export default function Home() {
   const [lineup, setLineup] = useState([]);
   const [coachName, setCoachName] = useState('');
   const [teamName, setTeamName] = useState('');
   const [hydrated, setHydrated] = useState(false);
-  const [legacyMode, setLegacyMode] = useState(false);
+  const [mode, setMode] = useState('current');
 
-  const selectedYear = legacyMode ? LEGACY_YEAR : CURRENT_YEAR;
+  const selectedYear = MODES.find(m => m.id === mode)?.year ?? 2026;
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -32,9 +38,8 @@ export default function Home() {
     setHydrated(true);
   }, []);
 
-  // Clear lineup when switching modes
-  function toggleLegacyMode() {
-    setLegacyMode(prev => !prev);
+  function switchMode(newMode) {
+    setMode(newMode);
     setLineup([]);
   }
 
@@ -78,58 +83,78 @@ export default function Home() {
   if (!hydrated) return null; // prevent SSR/localStorage mismatch flash
 
   return (
-    <div
-      className="min-h-screen bg-brand-dark"
-      style={{ backgroundImage: 'url(/images/court2.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}
-    >
+    <div className="min-h-screen">
+
+      {/* Background layers — cross-fade on mode change */}
+      <div className="fixed inset-0" style={{ zIndex: -1 }}>
+        <div
+          className="absolute inset-0"
+          style={{ backgroundImage: 'url(/images/court2.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        />
+        <div
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${mode === 'knicks' ? 'opacity-100' : 'opacity-0'}`}
+          style={{ backgroundImage: 'url(/images/MSGCourt.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        />
+      </div>
+
       {/* Dark overlay over court background */}
       <div className="min-h-screen" style={{ backgroundColor: 'rgba(13,17,23,0.88)' }}>
+        <Navbar mode={mode} />
 
         {/* Hero heading */}
         <div className="text-center pt-10 pb-6 px-4">
           <p className="text-sm text-gray-400 tracking-widest uppercase mb-2">
             Select 5 players to complete your ultimate lineup
           </p>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight uppercase">
-            Build Your{' '}
-            <span className="text-brand-orange">All-Star</span>{' '}
-            Team
+          <h1 className="relative text-4xl md:text-5xl font-extrabold tracking-tight uppercase">
+            <span className={`transition-opacity duration-700 ease-in-out ${mode === 'knicks' ? 'opacity-0' : 'opacity-100'}`}>
+              Build Your{' '}
+              <span className="text-brand-orange">All-Star</span>{' '}
+              Team
+            </span>
+            <span className={`absolute inset-0 whitespace-nowrap transition-opacity duration-700 ease-in-out ${mode === 'knicks' ? 'opacity-100' : 'opacity-0'}`}>
+              Build Your{' '}
+              <span className="text-brand-orange">Knicks</span>{' '}
+              Starting 5
+            </span>
           </h1>
 
-          {/* Legacy Mode Toggle */}
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <span className={`text-xs font-bold tracking-widest uppercase transition-colors ${!legacyMode ? 'text-brand-orange' : 'text-gray-500'}`}>
-              {CURRENT_YEAR}
-            </span>
-            <button
-              onClick={toggleLegacyMode}
-              className={`relative w-14 h-7 rounded-full transition-colors duration-300 focus:outline-none border-2 ${
-                legacyMode
-                  ? 'bg-amber-600 border-amber-500'
-                  : 'bg-brand-card border-brand-border'
-              }`}
-            >
-              <span
-                className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition-transform duration-300 ${
-                  legacyMode ? 'translate-x-7' : 'translate-x-0'
+          {/* Mode Selector */}
+          <div className="mt-5 flex items-center justify-center gap-2 flex-wrap">
+            {MODES.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => switchMode(id)}
+                className={`px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase transition-colors duration-200 border ${
+                  mode === id
+                    ? id === 'knicks'
+                      ? 'bg-blue-600 border-blue-500 text-white'
+                      : id === 'legacy'
+                      ? 'bg-amber-600 border-amber-500 text-white'
+                      : 'bg-brand-orange border-brand-orange text-white'
+                    : 'bg-brand-card border-brand-border text-gray-400 hover:text-white'
                 }`}
-              />
-            </button>
-            <span className={`text-xs font-bold tracking-widest uppercase transition-colors ${legacyMode ? 'text-amber-500' : 'text-gray-500'}`}>
-              Legacy Mode
-            </span>
+              >
+                {label}
+              </button>
+            ))}
           </div>
 
-          {legacyMode && (
+          {mode === 'legacy' && (
             <p className="mt-2 text-xs text-amber-500/80 tracking-wide">
               2003 NBA All-Star Game &middot; Atlanta (Philips Arena) &middot; West 155, East 145 (2OT)
+            </p>
+          )}
+          {mode === 'knicks' && (
+            <p className="mt-2 text-xs text-blue-400/80 tracking-wide">
+              2026 NBA Finals &middot; New York Knicks &middot; Eastern Conference Champions
             </p>
           )}
         </div>
 
         {/* Three-column layout */}
         <div className="max-w-screen-xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-[380px_1fr_260px] gap-5">
-          <FindPlayers lineup={lineup} onAdd={addPlayer} selectedYear={selectedYear} />
+          <FindPlayers lineup={lineup} onAdd={addPlayer} selectedYear={selectedYear} mode={mode} />
           <YourLineup lineup={lineup} teamName={teamName} setTeamName={setTeamName} onRemove={removePlayer} />
           <TeamInfo
             coachName={coachName}
@@ -142,6 +167,7 @@ export default function Home() {
           />
         </div>
 
+        <Footer mode={mode} />
       </div>
     </div>
   );

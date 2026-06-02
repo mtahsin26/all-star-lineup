@@ -1,14 +1,44 @@
-export default function Navbar() {
+import Image from 'next/image';
+
+export default function Navbar({ mode }) {
+  const isKnicks = mode === 'knicks';
+
   return (
-    <nav className="bg-brand-dark border-b border-brand-border px-6 py-3 flex items-center justify-between">
+    <nav
+      className="border-b border-brand-border px-6 py-3 flex items-center justify-between transition-colors duration-700 ease-in-out"
+      style={{ backgroundColor: isKnicks ? '#305CDE' : '#0D1117' }}
+    >
       {/* Logo */}
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-brand-orange rounded flex items-center justify-center font-bold text-white text-sm">
-          
+        <div className="relative w-8 h-8 flex-shrink-0">
+          {/* Default orange box */}
+          <div
+            className={`absolute inset-0 bg-brand-orange rounded flex items-center justify-center font-bold text-white text-sm transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}
+          >
+            N
+          </div>
+          {/* Knicks logo */}
+          <div
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <Image
+              src="/images/BG-removed knicks logo.png"
+              alt="New York Knicks"
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain"
+              unoptimized
+            />
+          </div>
         </div>
-        <span className="font-bold tracking-wider text-white text-sm uppercase">
-          NBA ALL STAR LINEUP <span className="text-brand-orange">Builder</span>
-        </span>
+        <div className="relative font-bold tracking-wider text-white text-sm uppercase">
+          <span className={`transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}>
+            NBA ALL STAR LINEUP <span className="text-brand-orange">Builder</span>
+          </span>
+          <span className={`absolute inset-0 whitespace-nowrap transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-100' : 'opacity-0'}`}>
+            New York Knicks <span className="text-brand-orange">Lineup Builder</span>
+          </span>
+        </div>
       </div>
 
       {/* Nav links */}
