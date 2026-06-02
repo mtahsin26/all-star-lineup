@@ -20,7 +20,7 @@ function initials(name) {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-export default function LineupSlot({ index, player, onRemove }) {
+export default function LineupSlot({ index, player, onRemove, knicksMode }) {
   const [hovered, setHovered] = useState(false);
   const [imgError, setImgError] = useState(false);
 
@@ -46,7 +46,10 @@ export default function LineupSlot({ index, player, onRemove }) {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Avatar */}
-      <div className="relative w-[60px] h-[60px] flex-shrink-0">
+      <div
+        className="relative w-[60px] h-[60px] flex-shrink-0 rounded-full"
+        style={{ backgroundColor: knicksMode ? '#1520A6' : 'transparent' }}
+      >
         {player.image && !imgError ? (
           <Image
             src={player.image}
@@ -60,7 +63,7 @@ export default function LineupSlot({ index, player, onRemove }) {
         ) : (
           <div
             className="w-[60px] h-[60px] rounded-full flex items-center justify-center text-lg font-bold text-white"
-            style={{ backgroundColor: avatarColor(player.name) }}
+            style={{ backgroundColor: knicksMode ? '#1520A6' : avatarColor(player.name) }}
           >
             {initials(player.name)}
           </div>

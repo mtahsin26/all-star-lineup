@@ -155,7 +155,7 @@ export default function Home() {
         {/* Three-column layout */}
         <div className="max-w-screen-xl mx-auto px-4 pb-12 grid grid-cols-1 lg:grid-cols-[380px_1fr_260px] gap-5">
           <FindPlayers lineup={lineup} onAdd={addPlayer} selectedYear={selectedYear} mode={mode} />
-          <YourLineup lineup={lineup} teamName={teamName} setTeamName={setTeamName} onRemove={removePlayer} />
+          <YourLineup lineup={lineup} teamName={teamName} setTeamName={setTeamName} onRemove={removePlayer} knicksMode={mode === 'knicks'} />
           <TeamInfo
             coachName={coachName}
             setCoachName={setCoachName}
@@ -164,6 +164,7 @@ export default function Home() {
             onSave={save}
             onLoad={load}
             onClear={clear}
+            knicksMode={mode === 'knicks'}
           />
         </div>
 

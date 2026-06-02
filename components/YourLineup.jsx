@@ -1,10 +1,13 @@
 import LineupSlot from './LineupSlot';
 
-export default function YourLineup({ lineup, teamName, setTeamName, onRemove }) {
+export default function YourLineup({ lineup, teamName, setTeamName, onRemove, knicksMode }) {
   const slots = Array.from({ length: 5 }, (_, i) => lineup[i] || null);
 
   return (
-    <div className="bg-brand-panel border border-brand-border rounded-xl flex flex-col">
+    <div
+      className="border border-brand-border rounded-xl flex flex-col transition-colors duration-700 ease-in-out"
+      style={{ backgroundColor: knicksMode ? 'rgba(24, 30, 40, 0.32)' : '#161B22' }}
+    >
       {/* Header */}
       <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-brand-border">
         <h2 className="text-xs font-bold tracking-widest uppercase text-gray-300">Your Lineup</h2>
@@ -21,7 +24,7 @@ export default function YourLineup({ lineup, teamName, setTeamName, onRemove }) 
       {/* Slots */}
       <div className="flex flex-col gap-2 px-4 py-4 flex-1">
         {slots.map((player, i) => (
-          <LineupSlot key={i} index={i} player={player} onRemove={onRemove} />
+          <LineupSlot key={i} index={i} player={player} onRemove={onRemove} knicksMode={knicksMode} />
         ))}
       </div>
 

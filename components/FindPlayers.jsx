@@ -50,7 +50,13 @@ export default function FindPlayers({ lineup, onAdd, selectedYear, mode }) {
   }
 
   return (
-    <div className="bg-brand-panel border border-brand-border rounded-xl flex flex-col" style={{ maxHeight: '660px' }}>
+    <div
+      className="border border-brand-border rounded-xl flex flex-col transition-colors duration-700 ease-in-out"
+      style={{
+        maxHeight: '660px',
+        backgroundColor: isKnicksMode ? 'rgba(24, 30, 40, 0.32)' : '#161B22',
+      }}
+    >
       {/* Header */}
       <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-brand-border flex-shrink-0">
         <div>
@@ -155,6 +161,7 @@ export default function FindPlayers({ lineup, onAdd, selectedYear, mode }) {
               player={player}
               onAdd={onAdd}
               inLineup={lineupNames.has(player.name)}
+              knicksMode={isKnicksMode}
             />
           ))
         )}

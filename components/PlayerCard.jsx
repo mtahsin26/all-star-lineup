@@ -21,7 +21,7 @@ function initials(name) {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-export default function PlayerCard({ player, onAdd, inLineup }) {
+export default function PlayerCard({ player, onAdd, inLineup, knicksMode }) {
   const [imgError, setImgError] = useState(false);
 
   const isInjured = !!player.status;
@@ -37,7 +37,10 @@ export default function PlayerCard({ player, onAdd, inLineup }) {
         }`}
     >
       {/* Avatar: real photo if available, initials fallback */}
-      <div className="relative w-[80px] h-[80px] flex-shrink-0">
+      <div
+        className="relative w-[80px] h-[80px] flex-shrink-0 rounded-full"
+        style={{ backgroundColor: knicksMode ? '#1520A6' : 'transparent' }}
+      >
         {player.image && !imgError ? (
           <Image
             src={player.image}
@@ -51,7 +54,7 @@ export default function PlayerCard({ player, onAdd, inLineup }) {
         ) : (
           <div
             className="w-[80px] h-[80px] rounded-full flex items-center justify-center text-xl font-bold text-white"
-            style={{ backgroundColor: avatarColor(player.name) }}
+            style={{ backgroundColor: knicksMode ? '#1520A6' : avatarColor(player.name) }}
           >
             {initials(player.name)}
           </div>

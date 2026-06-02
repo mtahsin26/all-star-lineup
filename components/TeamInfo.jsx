@@ -1,9 +1,16 @@
-export default function TeamInfo({ coachName, setCoachName, teamName, setTeamName, onSave, onLoad, onClear }) {
+export default function TeamInfo({ coachName, setCoachName, teamName, setTeamName, onSave, onLoad, onClear, knicksMode }) {
+  const cardStyle = {
+    backgroundColor: knicksMode ? 'rgba(24, 30, 40, 0.32)' : '#161B22',
+  };
+
   return (
     <div className="flex flex-col gap-4">
 
       {/* Team Info card */}
-      <div className="bg-brand-panel border border-brand-border rounded-xl px-4 py-4">
+      <div
+        className="border border-brand-border rounded-xl px-4 py-4 transition-colors duration-700 ease-in-out"
+        style={cardStyle}
+      >
         <h2 className="text-xs font-bold tracking-widest uppercase text-gray-300 mb-3">Team Info</h2>
 
         <div className="flex flex-col gap-3">
@@ -32,7 +39,10 @@ export default function TeamInfo({ coachName, setCoachName, teamName, setTeamNam
       </div>
 
       {/* Actions card */}
-      <div className="bg-brand-panel border border-brand-border rounded-xl px-4 py-4">
+      <div
+        className="border border-brand-border rounded-xl px-4 py-4 transition-colors duration-700 ease-in-out"
+        style={cardStyle}
+      >
         <h2 className="text-xs font-bold tracking-widest uppercase text-gray-300 mb-3">Actions</h2>
 
         <div className="flex flex-col gap-2">
@@ -60,7 +70,10 @@ export default function TeamInfo({ coachName, setCoachName, teamName, setTeamNam
       </div>
 
       {/* Pro Tip card */}
-      <div className="bg-brand-card border border-brand-border rounded-xl px-4 py-3">
+      <div
+        className="border border-brand-border rounded-xl px-4 py-3 transition-colors duration-700 ease-in-out"
+        style={cardStyle}
+      >
         <div className="flex items-start gap-2">
           <span className="text-brand-orange text-lg leading-none mt-0.5">💡</span>
           <div>
