@@ -31,11 +31,11 @@ export default function Navbar({ mode }) {
             />
           </div>
         </div>
-        <div className="relative font-bold tracking-wider text-white text-sm uppercase overflow-hidden min-w-0">
-          <span className={`transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}>
+        <div className="grid font-bold tracking-wider text-white text-sm uppercase">
+          <span className={`[grid-area:1/1] transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}>
             NBA ALL STAR LINEUP <span className="text-brand-orange">Builder</span>
           </span>
-          <span className={`absolute inset-0 whitespace-nowrap transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-100' : 'opacity-0'}`}>
+          <span className={`[grid-area:1/1] transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-100' : 'opacity-0'}`}>
             New York Knicks <span className="text-brand-orange">Lineup Builder</span>
           </span>
         </div>

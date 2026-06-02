@@ -32,11 +32,11 @@ export default function Footer({ mode }) {
           </div>
         </div>
 
-        <div className="relative font-bold tracking-wider text-white text-xs uppercase overflow-hidden min-w-0">
-          <span className={`transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}>
+        <div className="grid font-bold tracking-wider text-white text-xs uppercase">
+          <span className={`[grid-area:1/1] transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-0' : 'opacity-100'}`}>
             NBA All Star Lineup <span className="text-brand-orange">Builder</span>
           </span>
-          <span className={`absolute inset-0 whitespace-nowrap transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-100' : 'opacity-0'}`}>
+          <span className={`[grid-area:1/1] transition-opacity duration-700 ease-in-out ${isKnicks ? 'opacity-100' : 'opacity-0'}`}>
             New York Knicks <span className="text-brand-orange">Lineup Builder</span>
           </span>
         </div>
